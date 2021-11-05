@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CorePortal" parallel="none">
+
+	<listeners>
+		<listener class-name="org.freecrm.listeners.SuiteListener" />
+		<listener class-name="org.freecrm.listeners.TestListener" />
+		<listener class-name="org.freecrm.listeners.ExecutionListener" />
+	</listeners>
+
+	<test name="Login Test">
+		<classes>
+			<class name="org.freecrm.login.LoginTest" />
+		</classes>
+	</test>
+
+	<test name="Logout Test">
+		<classes>
+			<class name="org.freecrm.logout.LogoutTest" />
+		</classes>
+	</test>
+
+
+</suite>

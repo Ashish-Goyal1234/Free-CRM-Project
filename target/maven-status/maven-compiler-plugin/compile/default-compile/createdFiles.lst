@@ -1,0 +1,13 @@
+org\freecrm\utility\CybageLogger.class
+org\freecrm\utility\SendEmailableReportTest.class
+org\freecrm\datadriven\DataProviderPage.class
+org\freecrm\utility\FrameLocators.class
+org\freecrm\pom\LoginPage.class
+org\freecrm\datadriven\DataDrivenScript.class
+org\freecrm\utility\Utilities.class
+org\freecrm\utility\ApplicationConfiguration.class
+org\freecrm\pom\LogoutPage.class
+org\freecrm\skeleton\BaseClass.class
+org\freecrm\datadriven\Xls_Reader.class
+org\freecrm\utility\IConstants.class
+org\freecrm\utility\BrowserFactory.class

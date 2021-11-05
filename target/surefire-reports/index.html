@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-CorePortal">
+              <span class="suite-name border-failed">CorePortal</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-CorePortal">
+                    <span>D:\ashishProject\freecrmproject\src\main\resources\TestFileForCorePortal.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-CorePortal">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-CorePortal">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-CorePortal">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-CorePortal">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-CorePortal">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-CorePortal">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">5 methods, 1 failed,  1 skipped,  3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-CorePortal" class="hide-methods failed suite-CorePortal"> (hide)</a> <!-- hide-methods failed suite-CorePortal -->
+                      <a href="#" panel-name="suite-CorePortal" class="show-methods failed suite-CorePortal"> (show)</a> <!-- show-methods failed suite-CorePortal -->
+                    </span>
+                    <div class="method-list-content failed suite-CorePortal">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CorePortal" title="org.freecrm.login.LoginTest" hash-for-method="doUserReg">doUserReg</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-CorePortal -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-CorePortal" class="hide-methods skipped suite-CorePortal"> (hide)</a> <!-- hide-methods skipped suite-CorePortal -->
+                      <a href="#" panel-name="suite-CorePortal" class="show-methods skipped suite-CorePortal"> (show)</a> <!-- show-methods skipped suite-CorePortal -->
+                    </span>
+                    <div class="method-list-content skipped suite-CorePortal">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CorePortal" title="org.freecrm.login.LoginTest" hash-for-method="isSkipped">isSkipped</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-CorePortal -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-CorePortal" class="hide-methods passed suite-CorePortal"> (hide)</a> <!-- hide-methods passed suite-CorePortal -->
+                      <a href="#" panel-name="suite-CorePortal" class="show-methods passed suite-CorePortal"> (show)</a> <!-- show-methods passed suite-CorePortal -->
+                    </span>
+                    <div class="method-list-content passed suite-CorePortal">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CorePortal" title="org.freecrm.logout.LogoutTest" hash-for-method="performLogout">performLogout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CorePortal" title="org.freecrm.login.LoginTest" hash-for-method="testLogin(agoyal, Test@123)">testLogin(agoyal, Test@123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-CorePortal" title="org.freecrm.login.LoginTest" hash-for-method="verifyPresenceOfElements">verifyPresenceOfElements</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-CorePortal -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-CorePortal" class="panel CorePortal">
+          <div class="suite-CorePortal-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.freecrm.login.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="doUserReg">
+                  </a> <!-- doUserReg -->
+                  <span class="method-name">doUserReg</span>
+                  <div class="stack-trace">java.lang.AssertionError: User Reg failed
+	at org.freecrm.login.LoginTest.doUserReg(LoginTest.java:73)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CorePortal-class-failed -->
+          <div class="suite-CorePortal-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">org.freecrm.login.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="isSkipped">
+                  </a> <!-- isSkipped -->
+                  <span class="method-name">isSkipped</span>
+                  <div class="stack-trace">org.testng.SkipException: Skipping the test
+	at org.freecrm.login.LoginTest.isSkipped(LoginTest.java:78)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CorePortal-class-skipped -->
+          <div class="suite-CorePortal-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.freecrm.login.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(agoyal, Test@123)">
+                  </a> <!-- testLogin(agoyal, Test@123) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(agoyal, Test@123)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPresenceOfElements">
+                  </a> <!-- verifyPresenceOfElements -->
+                  <span class="method-name">verifyPresenceOfElements</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CorePortal-class-passed -->
+          <div class="suite-CorePortal-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.freecrm.logout.LogoutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="performLogout">
+                  </a> <!-- performLogout -->
+                  <span class="method-name">performLogout</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-CorePortal-class-passed -->
+        </div> <!-- panel CorePortal -->
+        <div panel-name="test-xml-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\ashishProject\freecrmproject\src\main\resources\TestFileForCorePortal.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;CorePortal&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.freecrm.listeners.SuiteListener&quot;/&gt;
+    &lt;listener class-name=&quot;org.freecrm.listeners.TestListener&quot;/&gt;
+    &lt;listener class-name=&quot;org.freecrm.listeners.ExecutionListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Login Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;org.freecrm.login.LoginTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login Test --&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Logout Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;org.freecrm.logout.LogoutTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Logout Test --&gt;
+&lt;/suite&gt; &lt;!-- CorePortal --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for CorePortal</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Login Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Logout Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for CorePortal</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for CorePortal</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_CorePortal');
+function tableData_CorePortal() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(5);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testLogin')
+data.setCell(0, 2, 'org.freecrm.login.LoginTest')
+data.setCell(0, 3, 8379);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'performLogout')
+data.setCell(1, 2, 'org.freecrm.logout.LogoutTest')
+data.setCell(1, 3, 699);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'doUserReg')
+data.setCell(2, 2, 'org.freecrm.login.LoginTest')
+data.setCell(2, 3, 74);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyPresenceOfElements')
+data.setCell(3, 2, 'org.freecrm.login.LoginTest')
+data.setCell(3, 3, 3);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'isSkipped')
+data.setCell(4, 2, 'org.freecrm.login.LoginTest')
+data.setCell(4, 3, 1);
+window.suiteTableData['CorePortal']= { tableData: data, tableDiv: 'times-div-CorePortal'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <div id="times-div-CorePortal">
+              </div> <!-- times-div-CorePortal -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for CorePortal</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-CorePortal" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.freecrm.login.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">preProcessor(org.testng.TestRunner@41bf79da)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">initializeResources</span>
+                <span class="method-start">41 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">doUserReg</span>
+                <span class="method-start">153 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isSkipped</span>
+                <span class="method-start">1340 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyPresenceOfElements</span>
+                <span class="method-start">1343 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLogin(agoyal, Test@123)</span>
+                <span class="method-start">2623 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">postProcessor</span>
+                <span class="method-start">11004 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.freecrm.logout.LogoutTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">preProcessor(org.testng.TestRunner@1a891add)</span>
+                <span class="method-start">11060 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">initializeResources</span>
+                <span class="method-start">11061 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">performLogout</span>
+                <span class="method-start">11075 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">postProcessor</span>
+                <span class="method-start">11776 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
