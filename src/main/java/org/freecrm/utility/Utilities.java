@@ -8,11 +8,15 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
+
 import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  * This is a Utility class and contains methods which are used to by other
@@ -111,6 +115,13 @@ public class Utilities {
      */
     public String getCurrentDate() {
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+    }
+    
+    
+    public static void selectDropDownValue(WebDriver driver,WebElement element, String value){
+    	Select drp = new Select(element);
+    	drp.selectByVisibleText(value);
+    	CybageLogger.info("Select Value from dropdown : " + value);
     }
 
 }

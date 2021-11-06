@@ -6,7 +6,6 @@ import org.freecrm.pom.LoginPage;
 import org.freecrm.skeleton.BaseClass;
 import org.freecrm.utility.CybageLogger;
 import org.testng.Assert;
-import org.testng.SkipException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -14,7 +13,6 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseClass {
 
     private LoginPage loginPage;
-    private String LoginSheetName                                              = "Logintest";
 
     
     /**
@@ -67,16 +65,4 @@ public class LoginTest extends BaseClass {
         }
         CybageLogger.info("Login elements are present.");
     }
-
-    @Test
-    public void doUserReg() {
-        Assert.fail("User Reg failed");
-    }
-
-    @Test
-    public void isSkipped() {
-        throw new SkipException("Skipping the test");
-    }
-    
-
 }

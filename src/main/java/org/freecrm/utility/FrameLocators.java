@@ -30,4 +30,10 @@ public final class FrameLocators {
         return mainPanelFrame;
     }
     
+    
+    public void switchToMainPanelFrame(){
+    	browserDriverInstance.switchTo().defaultContent();
+    	browserDriverInstance.switchTo().frame(mainPanelFrame);
+    }
+    
 }

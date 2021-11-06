@@ -3,7 +3,6 @@ package org.freecrm.logout;
 import org.freecrm.pom.LogoutPage;
 import org.freecrm.skeleton.BaseClass;
 import org.freecrm.utility.CybageLogger;
-import org.freecrm.utility.FrameLocators;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -17,7 +16,6 @@ import org.testng.annotations.Test;
 
 public class LogoutTest extends BaseClass{
     LogoutPage            logoutPage;
-    private FrameLocators frameLocaters;
 
     /**
      * This method initializes required instances for test.
@@ -25,14 +23,12 @@ public class LogoutTest extends BaseClass{
     @BeforeClass
     public void initializeResources() {
         logoutPage = new LogoutPage(browserDriver);
-        frameLocaters = new FrameLocators(browserDriver);
         CybageLogger.info("Initialized the POM object for Login page.");
     }
     
     
     @Test
     public void performLogout() throws InterruptedException{
-        browserDriver.switchTo().frame(frameLocaters.getMainPanelFrame());
         logoutPage.clkLogout();
     }
     

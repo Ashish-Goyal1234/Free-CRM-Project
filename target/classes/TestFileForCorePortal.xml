@@ -8,17 +8,11 @@
 		<listener class-name="org.freecrm.listeners.ExecutionListener" />
 	</listeners>
 
-	<test name="Login Test">
+	<test name="Chrome Test">
 		<classes>
 			<class name="org.freecrm.login.LoginTest" />
-		</classes>
-	</test>
-
-	<test name="Logout Test">
-		<classes>
+			<class name="org.freecrm.contact.ContactsTest" />
 			<class name="org.freecrm.logout.LogoutTest" />
 		</classes>
 	</test>
-
-
 </suite>

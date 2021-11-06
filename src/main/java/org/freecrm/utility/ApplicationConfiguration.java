@@ -1,9 +1,12 @@
 
 package org.freecrm.utility;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+
+import org.testng.Assert;
 
 /**
  * This class ready the properties file and extract the properties.
@@ -12,7 +15,8 @@ import java.util.Properties;
 
 public class ApplicationConfiguration {
 
-    private Properties prop;
+    private static Properties prop;
+    private static String basePath = System.getProperty("user.dir");
 
     /**
      * This method reads the properties file.
@@ -21,7 +25,7 @@ public class ApplicationConfiguration {
         if (prop == null) {
             try {
                 prop = new Properties();
-                String paths = System.getProperty("user.dir")
+                String paths = basePath
                         + IConstants.PROPERTIES_FILE;
                 FileInputStream fis;
                 fis = new FileInputStream(paths);
@@ -32,6 +36,43 @@ public class ApplicationConfiguration {
             CybageLogger.info("Successfully load the configuration..!");
         }
     }
+    
+    
+    /* Read a value from specified Properties File */
+	public static Properties readProp(String file_name) {
+		FileInputStream input = null;
+		try {
+			String propFile = basePath + File.separator + "src" + File.separator + "main" + File.separator + "resources"
+					+ File.separator + "" + file_name + ".properties";
+			input = new FileInputStream(propFile);
+			prop.load(input);
+		} catch (IOException e) {
+			e.printStackTrace();
+			e.getMessage();
+			Assert.fail("Failed to read property" + e);
+		}
+        CybageLogger.info("Successfully read the property..!");
+		return prop;
+	}
+    
+    
+    
+    /* Get a value from specified Properties File */
+	public String readPropValue(String file_name, String prop) {
+		String propertyValue = null;
+		try {
+			propertyValue = readProp(file_name).getProperty(prop);
+			if (propertyValue.isEmpty()) {
+				throw new NullPointerException();
+			}
+		} catch (Exception e) {
+			 CybageLogger.info(e.getMessage() + " for property: " + prop);// added for logging
+		}
+		return propertyValue;
+	}
+    
+    
+    
 
     /**
      * @return String Url from properties file, null if its not present.
