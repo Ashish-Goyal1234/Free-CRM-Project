@@ -123,5 +123,12 @@ public class Utilities {
     	drp.selectByVisibleText(value);
     	CybageLogger.info("Select Value from dropdown : " + value);
     }
+    
+    public static void uploadAnImage(WebElement element, String filePath) throws InterruptedException{
+    	Thread.sleep(2000);
+    	WebElement UploadImg = element;
+    	UploadImg.sendKeys(filePath);
+    }
+    
 
 }

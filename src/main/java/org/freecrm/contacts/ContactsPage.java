@@ -52,6 +52,15 @@ public class ContactsPage {
 	@FindBy(id="surname")
 	private WebElement lastName;
 	
+	@FindBy(xpath="//select[@name='suffix']")
+	private WebElement drpSuffix;
+	
+	@FindBy(name="image_file")
+	private WebElement btnChooseFile;
+	
+	@FindBy(css="fieldset.fieldset:nth-child(3) table:nth-child(5) tbody:nth-child(1) tr:nth-child(1) td:nth-child(1) > input.button:nth-child(2)")
+	private WebElement btnSave;
+	
 	
 
 	public WebElement getlnkNewContacts() {
@@ -90,7 +99,13 @@ public class ContactsPage {
 		return lastName;
 	}
 	
-	public void enterContactInformation(String title, String firstName, String middleName, String lastName){
+	
+	public WebElement clkBtnSave(){
+		return btnSave;
+	}
+	
+	public void enterContactInformation(String title, String firstName, String middleName, String lastName,
+			String suffix, String filePath) throws InterruptedException{
 		Utilities.selectDropDownValue(paramDriver, drpTitle, title);
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getFirstName())).clear();
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getFirstName())).sendKeys(firstName);
@@ -98,9 +113,13 @@ public class ContactsPage {
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getMiddleName())).sendKeys(middleName);
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getLastName())).clear();
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getLastName())).sendKeys(lastName);
-		
-		CybageLogger.info("Entered First Name as :"+firstName+" Middle Name as : "+middleName+" Last Name as : "+lastName );
-		System.out.println("Entered First Name as :"+firstName+" Middle Name as : "+middleName+" Last Name as : "+lastName );
+		Utilities.selectDropDownValue(paramDriver, drpSuffix, suffix);
+		Utilities.uploadAnImage(btnChooseFile, filePath);
+		waitForReload.until(ExpectedConditions.elementToBeClickable(clkBtnSave())).click();;
+
+
+		CybageLogger.info("Entered First Name as : "+firstName+" "+middleName+" "+lastName );
+		System.out.println("Entered First Name as : "+firstName+" "+middleName+" "+lastName );
 	}
 	
 	

@@ -33,10 +33,11 @@ public class ContactsTest extends BaseClass{
 	 
 	 
 	 @Test(priority = 1, dataProvider="createNewContactData", dataProviderClass = DataProviderPage.class,description = "This test method is used to create a new contact" )
-	 public void createNewContact(String title, String firstName, String middleName, String lastName){
+	 public void createNewContact(String title, String firstName, String middleName, String lastName,
+			 String suffix, String filePath){
 		 try{
 		 contactspage.clkNewContacts();
-		 contactspage.enterContactInformation(title, firstName, middleName, lastName);
+		 contactspage.enterContactInformation(title, firstName, middleName, lastName,suffix,filePath);
 		 }catch(Exception e){
 			 CybageLogger.debug("Failed to Create New contact" + e);
 			 Assert.fail("Create New Contacts Failed" + e);
