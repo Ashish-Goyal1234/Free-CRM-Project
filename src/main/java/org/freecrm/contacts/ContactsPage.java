@@ -1,5 +1,7 @@
 package org.freecrm.contacts;
 
+import java.util.List;
+
 import org.freecrm.utility.CybageLogger;
 import org.freecrm.utility.FrameLocators;
 import org.freecrm.utility.Utilities;
@@ -61,7 +63,27 @@ public class ContactsPage {
 	@FindBy(css="fieldset.fieldset:nth-child(3) table:nth-child(5) tbody:nth-child(1) tr:nth-child(1) td:nth-child(1) > input.button:nth-child(2)")
 	private WebElement btnSave;
 	
+	@FindBy(name ="contact_id")
+	private List<WebElement> chkBoxSelectAllContacts;
 	
+	@FindBy(name = "do_action")
+	private WebElement drpDowndeleteChecked;
+	
+	@FindBy(xpath="//input[@value='DO']")
+	private WebElement doBtn;
+	
+	
+	public WebElement getDoBtn(){
+		return doBtn;
+	}
+	
+	public WebElement getdrpDownDeleteChecked(){
+		return drpDowndeleteChecked;
+	}
+	
+	public WebElement selectAllContactsCheckbox(){	
+		return chkBoxSelectAllContacts.get(0);	
+	}
 
 	public WebElement getlnkNewContacts() {
 		return lnkNewContacts;
@@ -123,7 +145,24 @@ public class ContactsPage {
 	}
 	
 	
+	public void clkContactsLbl(){
+		frame.switchToMainPanelFrame();
+		waitForReload.until(ExpectedConditions.elementToBeClickable(lnkContacts)).click();
+		CybageLogger.info("Clicked on CONTACTS......!");
+	}
 	
+	public void clkSelectAllContactsCheckbox(){
+		waitForReload.until(ExpectedConditions.elementToBeClickable(selectAllContactsCheckbox())).click();
+		CybageLogger.info("Clicked on Select All Checkbox to select all the contacts......!");
+	}
+	
+	public void deleteAllContacts(){
+		clkSelectAllContactsCheckbox();
+		Utilities.selectDropDownValue(paramDriver, getdrpDownDeleteChecked(), "Delete Checked");
+		waitForReload.until(ExpectedConditions.elementToBeClickable(getDoBtn())).click();
+		paramDriver.switchTo().alert().accept();
+		CybageLogger.info("Clicked on Select all checkbox and clicked on do btn");
+	}
 	
 
 }

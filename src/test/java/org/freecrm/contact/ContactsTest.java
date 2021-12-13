@@ -4,6 +4,7 @@ import org.freecrm.contacts.ContactsPage;
 import org.freecrm.datadriven.DataProviderPage;
 import org.freecrm.skeleton.BaseClass;
 import org.freecrm.utility.CybageLogger;
+import org.freecrm.utility.Utilities;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -42,6 +43,14 @@ public class ContactsTest extends BaseClass{
 			 CybageLogger.debug("Failed to Create New contact" + e);
 			 Assert.fail("Create New Contacts Failed" + e);
 		 }
+	 }
+	 
+	 
+	 @Test(priority = 2, description = "This test method is used to delete all the created contacts")
+	 public void deleteContact() throws InterruptedException{
+		 contactspage.clkContactsLbl();
+		 contactspage.deleteAllContacts();
+		 Thread.sleep(5000); 
 	 }
 	 
 	 
