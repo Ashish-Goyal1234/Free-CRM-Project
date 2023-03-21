@@ -1,6 +1,0 @@
-org\freecrm\listeners\ExecutionListener.class
-org\freecrm\listeners\SuiteListener.class
-org\freecrm\login\LoginTest.class
-org\freecrm\listeners\CleanUp.class
-org\freecrm\listeners\TestListener.class
-org\freecrm\logout\LogoutTest.class

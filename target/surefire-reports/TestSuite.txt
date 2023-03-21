@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 27.383 sec <<< FAILURE!
-doUserReg(org.freecrm.login.LoginTest)  Time elapsed: 0.093 sec  <<< FAILURE!
-java.lang.AssertionError: User Reg failed
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.freecrm.login.LoginTest.doUserReg(LoginTest.java:73)
-
