@@ -1,8 +1,9 @@
 package org.freecrm.contacts;
 
+import java.time.Duration;
 import java.util.List;
 
-import org.freecrm.utility.CybageLogger;
+import org.freecrm.utility.Logger;
 import org.freecrm.utility.FrameLocators;
 import org.freecrm.utility.Utilities;
 import org.openqa.selenium.WebDriver;
@@ -23,11 +24,11 @@ public class ContactsPage {
 	public ContactsPage(WebDriver paramDriver) {
 
 		frame = new FrameLocators(paramDriver);
-		waitForReload = new WebDriverWait(paramDriver,15);
+		waitForReload = new WebDriverWait(paramDriver,Duration.ofMinutes(5));
 		this.paramDriver = paramDriver;
 		action = new Actions(paramDriver);
 		PageFactory.initElements(paramDriver, this);
-		CybageLogger.info("Initialized Contacts page POM elements.");
+		Logger.info("Initialized Contacts page POM elements.");
 	}
 
 	@FindBy(xpath = "//a[text()='Contacts']")
@@ -98,10 +99,10 @@ public class ContactsPage {
 	}
 	
 	
-	public void clkNewContacts() {
+	public void clkNewContacts(){
 		hoverContacts();
 		lnkNewContacts.click();
-		CybageLogger.info("Clicked on New Contacts......!");
+		Logger.info("Clicked on New Contacts......!");
 	}
 	
 	public void hoverContacts(){
@@ -137,23 +138,20 @@ public class ContactsPage {
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getLastName())).sendKeys(lastName);
 		Utilities.selectDropDownValue(paramDriver, drpSuffix, suffix);
 		Utilities.uploadAnImage(btnChooseFile, filePath);
-		waitForReload.until(ExpectedConditions.elementToBeClickable(clkBtnSave())).click();;
-
-
-		CybageLogger.info("Entered First Name as : "+firstName+" "+middleName+" "+lastName );
-		System.out.println("Entered First Name as : "+firstName+" "+middleName+" "+lastName );
+		waitForReload.until(ExpectedConditions.elementToBeClickable(clkBtnSave())).click();
+		Logger.info("Entered First Name as : "+firstName+" "+middleName+" "+lastName );
 	}
 	
 	
 	public void clkContactsLbl(){
 		frame.switchToMainPanelFrame();
 		waitForReload.until(ExpectedConditions.elementToBeClickable(lnkContacts)).click();
-		CybageLogger.info("Clicked on CONTACTS......!");
+		Logger.info("Clicked on CONTACTS......!");
 	}
 	
 	public void clkSelectAllContactsCheckbox(){
 		waitForReload.until(ExpectedConditions.elementToBeClickable(selectAllContactsCheckbox())).click();
-		CybageLogger.info("Clicked on Select All Checkbox to select all the contacts......!");
+		Logger.info("Clicked on Select All Checkbox to select all the contacts......!");
 	}
 	
 	public void deleteAllContacts(){
@@ -161,7 +159,7 @@ public class ContactsPage {
 		Utilities.selectDropDownValue(paramDriver, getdrpDownDeleteChecked(), "Delete Checked");
 		waitForReload.until(ExpectedConditions.elementToBeClickable(getDoBtn())).click();
 		paramDriver.switchTo().alert().accept();
-		CybageLogger.info("Clicked on Select all checkbox and clicked on do btn");
+		Logger.info("Clicked on Select all checkbox and clicked on do btn");
 	}
 	
 

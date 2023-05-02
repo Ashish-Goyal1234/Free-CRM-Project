@@ -12,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.freecrm.utility.CybageLogger;
+import org.freecrm.utility.Logger;
 
 public class Xls_Reader {
 
@@ -40,11 +40,11 @@ public class Xls_Reader {
             int index = workbook.getSheetIndex(SheetName);
             if (isSheetExist(SheetName)) {
                 sheet = workbook.getSheetAt(index);
-                CybageLogger.info("Sheet is present in the Xlxs file.");
+                Logger.info("Sheet is present in the Xlxs file.");
             }
             fis.close();
         } catch (Exception e) {
-            CybageLogger.info(" xlxs File does not found : ", e);
+            Logger.info(" xlxs File does not found : ", e);
         }
     }
     
@@ -320,7 +320,7 @@ public class Xls_Reader {
                         .valueOf(row.getCell(colNum).getStringCellValue());
             }
         } catch (Exception e) {
-            CybageLogger.info("row does not fund for the index for cell data : ",
+            Logger.info("row does not fund for the index for cell data : ",
                     e);
         }
         return cellText;

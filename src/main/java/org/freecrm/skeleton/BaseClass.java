@@ -2,7 +2,7 @@ package org.freecrm.skeleton;
 
 import org.freecrm.datadriven.DataDrivenScript;
 import org.freecrm.utility.ApplicationConfiguration;
-import org.freecrm.utility.CybageLogger;
+import org.freecrm.utility.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ISuite;
 import org.testng.ITestContext;
@@ -27,8 +27,8 @@ public class BaseClass {
         DrivenScript = new DataDrivenScript();
         config = (ApplicationConfiguration) suite
                 .getAttribute("configurations");
-        CybageLogger.setClass(this);
-        CybageLogger.startTestCase(this.getClass().getSimpleName());
+        Logger.setClass(this);
+        Logger.startTestCase(this.getClass().getSimpleName());
     }
 
     /**
@@ -37,7 +37,7 @@ public class BaseClass {
      */
     @AfterClass
     public void postProcessor() {
-        CybageLogger.endTestCase(this.getClass().getSimpleName());
+        Logger.endTestCase(this.getClass().getSimpleName());
     }
 
     /**

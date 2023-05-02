@@ -2,20 +2,18 @@
 package org.freecrm.utility;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * This internally uses Log4j api to log the messages.
  */
-public final class CybageLogger {
+public final class Logger {
 
-    private static Logger log = LogManager
-            .getLogger(CybageLogger.class.getName());
+    private static org.apache.logging.log4j.Logger log = LogManager.getLogger(Logger.class.getName());
 
     /**
      * Default constructor.
      */
-    private CybageLogger() {
+    private Logger() {
     }
 
     /**

@@ -37,12 +37,12 @@ public class SendEmailableReportTest {
                             email.addTo(recipientEmailAddress);
                             email.attach(attachment);
                             email.send();
-                            CybageLogger.info("Email send Succesfully to recepients : " + recipientEmailAddress);
+                            Logger.info("Email send Succesfully to recepients : " + recipientEmailAddress);
                     }
             } catch (Exception e) {
                 e.printStackTrace();
                     Assert.fail("Failed to send an Email :" + e);
-                    CybageLogger.error("Failed to send an email :" + e);
+                    Logger.error("Failed to send an email :" + e);
                
             }
     }

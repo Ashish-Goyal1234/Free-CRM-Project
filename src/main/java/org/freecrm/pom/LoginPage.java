@@ -1,17 +1,23 @@
 
 package org.freecrm.pom;
 
-import org.freecrm.utility.CybageLogger;
+import java.time.Duration;
+
+import org.freecrm.utility.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
+	private WebDriverWait waitForReload;
 
     public LoginPage(WebDriver paramDriver) {
+    	waitForReload = new WebDriverWait(paramDriver, Duration.ofMinutes(5));
         PageFactory.initElements(paramDriver, this);
-        CybageLogger.info("Initialized Login page POM elements.");
+        Logger.info("Initialized Login page POM elements.");
     }
     
     @FindBy(linkText = "Home")
@@ -42,106 +48,48 @@ public class LoginPage {
     private WebElement btnSubmit;
     
     
-    
-    
-    /**
-     * This method returns the instance of Home link
-     * 
-     * @return lnkHome
-     */
     public WebElement getHomeLink() {
         return lnkHome;
     }
     
     
-    /**
-     * This method returns the instance of Sign Up link
-     * 
-     * @return lnkSignUp
-     */
     public WebElement getSignUpLink() {
         return lnkSignUp;
     }
     
-    
-    /**
-     * This method returns the instance of Pricing link
-     * 
-     * @return lnkPricing
-     */
     public WebElement getPricingLink() {
         return lnkPricing;
     }
     
-    
-    /**
-     * This method returns the instance of Features link
-     * 
-     * @return lnkFeatures
-     */
     public WebElement getFeaturesLink() {
         return lnkFeatures;
     }
-    
-    
-    /**
-     * This method returns the instance of Customers link
-     * 
-     * @return lnkCustomers
-     */
+
     public WebElement getCustomersLink() {
         return lnkCustomers;
     }
     
-    
-    /**
-     * This method returns the instance of Contact link
-     * 
-     * @return lnkContacts
-     */
     public WebElement getContactsLink() {
         return lnkContacts;
     }
     
-    
-    /**
-     * Getter for txtUsername
-     * 
-     * @return WebElement
-     */
+
     public WebElement getTxtUsername() {
         return txtUsername;
     }
     
-    
-    /**
-     * Getter for txtPassword
-     * 
-     * @return WebElement
-     */
     public WebElement getTxtPassword() {
         return txtPassword;
     }
 
-    /**
-     * Getter for btnSubmit
-     * 
-     * @return WebElement
-     */
     public WebElement getBtnLoginButton() {
         return btnSubmit;
     }
 
-    
-    /**
-     * This method sets the provided username in the username text field.
-     * 
-     * @param username String value containing the username
-     */
     public void enterUsername(String username) {
-        getTxtUsername().clear();
+    	getTxtUsername().clear();
         getTxtUsername().sendKeys(username);
-        CybageLogger.info("Entered username " + username);
+        Logger.info("Entered username " + username);
     }
 
     /**
@@ -150,9 +98,9 @@ public class LoginPage {
      * @param password String value containing the password
      */
     public void enterPassword(String password) {
-        getTxtPassword().clear();
-        getTxtPassword().sendKeys(password);
-        CybageLogger.info("Entered password " + password);
+    	waitForReload.until(ExpectedConditions.elementToBeClickable(txtPassword)).clear();
+    	waitForReload.until(ExpectedConditions.elementToBeClickable(txtPassword)).sendKeys(password);
+        Logger.info("Entered password " + password);
     }
 
     /**
@@ -160,7 +108,7 @@ public class LoginPage {
      */
     public void clkLoginButton() {
         getBtnLoginButton().click();
-        CybageLogger.info("Clicked on the login button.");
+        Logger.info("Clicked on the login button.");
     }
     
 }

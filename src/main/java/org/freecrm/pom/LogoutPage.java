@@ -1,29 +1,29 @@
 package org.freecrm.pom;
 
-import java.util.List;
-import org.freecrm.utility.CybageLogger;
+import org.freecrm.skeleton.BaseClass;
+import org.freecrm.utility.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LogoutPage {
+public class LogoutPage extends BaseClass{
     
     
     public LogoutPage(WebDriver paramDriver) {
         PageFactory.initElements(paramDriver, this);
-        CybageLogger.info("Initialized Login page POM elements.");
+        Logger.info("Initialized Logout page POM elements.");
     }
     
-    @FindBy(css=".topnavlink")
-    private List<WebElement> logout;
+    @FindBy(xpath="(//a[@class='topnavlink'])[3]")
+    private WebElement logout;
     
-    public List<WebElement> getLogoutBtn() {
+    public WebElement getLogoutBtn() {
         return logout;
     }
     
-    public void clkLogout() throws InterruptedException{
-        getLogoutBtn().get(2).click();
+    public void clkLogout(){
+        getLogoutBtn().click();
     }
     
 

@@ -25,15 +25,14 @@ public class ApplicationConfiguration {
         if (prop == null) {
             try {
                 prop = new Properties();
-                String paths = basePath
-                        + IConstants.PROPERTIES_FILE;
+                String paths = basePath + IConstants.PROPERTIES_FILE;
                 FileInputStream fis;
                 fis = new FileInputStream(paths);
                 prop.load(fis);
             } catch (IOException e) {
-                CybageLogger.fatal("Failed to load Configuration" + e);
+                Logger.fatal("Failed to load Configuration" + e);
             }
-            CybageLogger.info("Successfully load the configuration..!");
+            Logger.info("Successfully load the configuration..!");
         }
     }
     
@@ -42,8 +41,7 @@ public class ApplicationConfiguration {
 	public static Properties readProp(String file_name) {
 		FileInputStream input = null;
 		try {
-			String propFile = basePath + File.separator + "src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + "" + file_name + ".properties";
+			String propFile = basePath + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "" + file_name + ".properties";
 			input = new FileInputStream(propFile);
 			prop.load(input);
 		} catch (IOException e) {
@@ -51,7 +49,7 @@ public class ApplicationConfiguration {
 			e.getMessage();
 			Assert.fail("Failed to read property" + e);
 		}
-        CybageLogger.info("Successfully read the property..!");
+        Logger.info("Successfully read the property..!");
 		return prop;
 	}
     
@@ -66,7 +64,7 @@ public class ApplicationConfiguration {
 				throw new NullPointerException();
 			}
 		} catch (Exception e) {
-			 CybageLogger.info(e.getMessage() + " for property: " + prop);// added for logging
+			 Logger.info(e.getMessage() + " for property: " + prop);// added for logging
 		}
 		return propertyValue;
 	}
@@ -93,6 +91,14 @@ public class ApplicationConfiguration {
         }
         return null;
     }
+    
+    public String getRunParallel() {
+        if (prop != null) {
+            return prop.getProperty("runParallel");
+        }
+        return null;
+    }
+
 
     /**
      * @return String Browser Name from properties file, null if its not
@@ -101,6 +107,13 @@ public class ApplicationConfiguration {
     public String getBrowserName() {
         if (prop != null) {
             return prop.getProperty("browser");
+        }
+        return null;
+    }
+    
+    public String getMultipleBrowserNames() {
+        if (prop != null) {
+            return prop.getProperty("multipleBrowsers");
         }
         return null;
     }

@@ -34,10 +34,10 @@ public class Utilities {
      */
     public static void tempMethodForThreadSleep(int millis) {
         try {
-            CybageLogger.info("Thread.sleep for " + millis + " milliseconds.");
+            Logger.info("Thread.sleep for " + millis + " milliseconds.");
             Thread.sleep(millis);
         } catch (InterruptedException e) {
-            CybageLogger.error("Interrupted Exception : ", e);
+            Logger.error("Interrupted Exception : ", e);
             Thread.currentThread().interrupt();
         }
     }
@@ -58,7 +58,7 @@ public class Utilities {
             FileUtils.copyFile(srcFile, new File(new Utilities()
                     .buildScreenshotFilePath(path, testMethodName)));
         } catch (Exception e) {
-            CybageLogger.fatal("Screenshot Failed :", e);
+            Logger.fatal("Screenshot Failed :", e);
         }
     }
 
@@ -87,7 +87,7 @@ public class Utilities {
             // To copy temp image in to permanent file
             ImageIO.write(tmp, "png", screenshotFile);
         } catch (Exception e) {
-            CybageLogger.fatal("Screenshot using Robot Failed :", e);
+            Logger.fatal("Screenshot using Robot Failed :", e);
         }
 
         return path;
@@ -121,7 +121,7 @@ public class Utilities {
     public static void selectDropDownValue(WebDriver driver,WebElement element, String value){
     	Select drp = new Select(element);
     	drp.selectByVisibleText(value);
-    	CybageLogger.info("Select Value from dropdown : " + value);
+    	Logger.info("Select Value from dropdown : " + value);
     }
     
     public static void uploadAnImage(WebElement element, String filePath) throws InterruptedException{

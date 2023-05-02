@@ -16,8 +16,8 @@ public class ExecutionListener implements IExecutionListener {
      */
 
     public void onExecutionFinish() {
-        CleanUp cleanup = new CleanUp();
-        cleanup.closeBrowserDriver();
+      //  CleanUp cleanup = new CleanUp();
+        //cleanup.closeBrowserDriver();
         //cleanup.sendEmailReport();
     }
 

@@ -1,6 +1,6 @@
 package org.freecrm.listeners;
 
-import org.freecrm.utility.CybageLogger;
+import org.freecrm.utility.Logger;
 
 public class CleanUp extends SuiteListener{
     /**
@@ -8,11 +8,11 @@ public class CleanUp extends SuiteListener{
      */
     public void closeBrowserDriver() {
         webDriverInstance.quit();
-        CybageLogger.info("Closed browser window.");
+        Logger.info("Closed browser window.");
     }
     
     
-    public void sendEmailReport() {
+   /* public void sendEmailReport() {
         loadEmailReportInstance();
-    }
+    }*/
 }
